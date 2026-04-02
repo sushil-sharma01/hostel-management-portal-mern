@@ -1,0 +1,8 @@
+.notice-card {
+  transition: all 0.3s ease;
+}
+
+.notice-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25) !important;
+}

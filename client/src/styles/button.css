@@ -1,0 +1,20 @@
+.back-btn {
+  margin-bottom: 20px;
+
+  padding: 10px 22px;
+  border-radius: 25px;
+
+  border: 1.5px solid #caa472;
+  background-color: #e8d5b7;
+  color: #6b4a2b;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #d9bd96;
+}

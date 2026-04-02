@@ -1,0 +1,67 @@
+.complaint-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: 40px auto;
+  width: 60%;
+}
+
+/* Heading */
+.complaint-card h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Inputs */
+.complaint-card input,
+.complaint-card textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;        /* remove default outline */
+  box-shadow: none;
+  transition: 0.2s ease;
+}
+
+/* Focus State */
+.complaint-card input:focus,
+.complaint-card textarea:focus {
+  border: 1px solid #b08a5a;   /* theme color */
+  outline: none;
+  box-shadow: none;
+}
+
+/* Textarea height */
+.complaint-card textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+/* Submit Button */
+.complaint-card button {
+  background: #c8a97e;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Hover Effect */
+.complaint-card button:hover {
+  background: #b08a5a;
+}
+.complaint-card textarea {
+  border: 1px solid #ccc !important;
+}
+
+.complaint-card textarea:focus {
+  border: 1px solid #b08a5a !important;
+  outline: none !important;
+  box-shadow: none !important;
+}

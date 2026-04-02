@@ -1,0 +1,116 @@
+.leave-container {
+  width: 85%;
+  margin: 40px auto;
+}
+
+.leave-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.leave-card {
+  background: #f7f1e3;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.leave-card input,
+.leave-card textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.leave-card button {
+  background: #c8a97e;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.leave-card button:hover {
+  background: #b08a5a;
+}
+
+/* Leave History Card */
+.leave-history {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-top: 40px;
+}
+
+/* Table */
+.leave-history table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leave-history th {
+  background-color: #e6d5b8;   /* exact admin */
+  padding: 14px;
+  border: 1px solid #dcdcdc;
+  color: #4e342e;
+  font-weight: 600;
+}
+.leave-history th {
+  padding: 14px;
+  border: 1px solid #dcdcdc;   /* exact admin border */
+  color: #4e342e;              /* exact admin text color */
+  font-weight: 600;
+}
+
+.leave-history td {
+  padding: 14px;
+  border: 1px solid #e0e0e0;
+}
+/* Status Colors */
+.status-approved {
+  color: green;
+  font-weight: 500;
+}
+
+.status-pending {
+  color: orange;
+  font-weight: 500;
+}
+
+.status-rejected {
+  color: red;
+  font-weight: 500;
+}
+/* Filter Buttons */
+.leave-filters {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid #c5a97f;
+  background-color: white;
+  color: #4e342e;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #f2e6d8;
+}
+
+.active-filter {
+  background-color: #c8a97e;
+  color: white;
+  border: none;
+}
