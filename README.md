@@ -1,15 +1,17 @@
-# ATTENDTRACK – Student Attendance Management System
+# Hostel Management System Portal (AMSD)
 
-ATTENDTRACK is a Java Swing-based desktop application designed for efficient, role-based student attendance management. The system provides dedicated interfaces for Administrators, Faculty, and Students to ensure streamlined workflows and accurate data tracking.
+The Hostel Management System Portal is a full-stack web application developed using the MERN stack (MongoDB, Express.js, React.js, Node.js). It is designed to manage hostel operations such as student records, room allocation, and complaint handling with a simple and efficient interface.
 
 ---
 
 ## Overview
 
-* Type: Java Swing Desktop Application
-* Database: MySQL 8.0
-* Architecture: DAO (Data Access Object) Pattern
-* Interface: Graphical User Interface (GUI)
+* Type: Web Application (MERN Stack)
+* Frontend: React.js
+* Backend: Node.js, Express.js
+* Database: MongoDB
+* Architecture: REST API with MVC pattern
+* Interface: Browser-based Graphical User Interface
 
 ---
 
@@ -17,70 +19,63 @@ ATTENDTRACK is a Java Swing-based desktop application designed for efficient, ro
 
 ### Admin Module
 
-* Full CRUD operations for Students, Faculty, Courses, and Sections
-* Soft-delete and reactivation support
-* Timetable management with section-wise weekly grid
-* Attendance management:
-
-  * Search by student roll number
-  * View attendance summaries
-  * Edit or correct attendance records
-
----
-
-### Faculty Module
-
-* Dashboard showing today's scheduled classes
-* Mark attendance using date and period selection
-* Bulk attendance marking support
-* View course-wise attendance summaries
-* Change password functionality
+* Add, view, and delete student records
+* Add and manage rooms
+* Track room availability and occupancy
+* View dashboard statistics (students, rooms, complaints)
+* Manage complaints submitted by students
 
 ---
 
 ### Student Module
 
-* Dashboard with personal details and notice board
-* Displays attendance status and warnings
-* Subject-wise attendance summary
-* Detailed date-wise attendance breakdown
-* Change password functionality
+* Register and login securely
+* View personal details
+* Check allocated room
+* Submit complaints
+* View complaint status
 
 ---
 
 ## Key Design Decisions
 
-* Soft Delete Pattern: Uses `is_active` flag to preserve data integrity
-* DAO Pattern: GUI interacts directly with DAO classes for simplicity
 * Role-Based Access Control:
 
-  * Admin: Full access
-  * Faculty: Limited to marking and viewing attendance
-  * Student: Read-only access
+  * Admin: Full access to system
+  * Student: Limited access
 
----
+* JWT Authentication:
 
-## Attendance Status Thresholds
+  * Secure login using tokens
+  * Middleware-based route protection
 
-* Good: Attendance ≥ 75%
-* Warning: 65% ≤ Attendance < 75%
-* Low: Attendance < 65%
+* MVC Architecture:
+
+  * Models define database schema
+  * Controllers handle business logic
+  * Routes manage API endpoints
+
+* MongoDB with Mongoose:
+
+  * Structured schema design
+  * Efficient data handling
 
 ---
 
 ## Project Structure
 
-```id="jv1"
-ATTENDTRACK/
-├── MainGUI.java
-├── bin/
-├── dao/
-├── database/
-├── gui/
-├── gui/panels/
+```id="h1"
+backend/
+├── controllers/
 ├── models/
-├── lib/
-└── docs/
+├── routes/
+├── middleware/
+
+client/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── styles/
 ```
 
 ---
@@ -89,68 +84,55 @@ ATTENDTRACK/
 
 ### Prerequisites
 
-* JDK 8 or higher
-* MySQL Server 8.0 or above
-* MySQL Connector/J
+* Node.js (v14 or higher)
+* MongoDB (local or Atlas)
+* npm or yarn
 
 ---
 
-### Database Configuration
+### Backend Setup
 
-Update `database/DBConnection.java`:
-
-```id="jv2"
-private static final String URL      = "jdbc:mysql://localhost:3306/student_attendance_db";
-private static final String USER     = "root";
-private static final String PASSWORD = "your_password";
-```
-
----
-
-### Initialize Database
-
-Run the SQL scripts:
-
-```id="jv3"
-database.sql
-demo_data.sql
+```id="h2"
+cd backend
+npm install
+npm start
 ```
 
 ---
 
-### Compile and Run
+### Frontend Setup
 
-#### Create build folder
-
-```id="jv4"
-mkdir bin
+```id="h3"
+cd client
+npm install
+npm start
 ```
 
-#### Compile
+---
 
-```id="jv5"
-javac -d bin -cp ".;lib/*" MainGUI.java
-```
+## Environment Variables
 
-#### Run
+Create a `.env` file in backend folder and add:
 
-```id="jv6"
-java -cp "bin;lib/*" MainGUI
+```id="h4"
+MONGO_URI=your_mongodb_connection
+PORT=5000
+JWT_SECRET=your_secret_key
 ```
 
 ---
 
 ## Known Limitations
 
-* Requires local MySQL setup
-* No export to PDF or Excel
-* No session timeout
+* No online payment integration
+* Basic UI design
+* No email notification system
 
 ---
 
 ## Future Scope
 
-* Email notifications for low attendance
-* Biometric attendance integration
-* Mobile application
-* Advanced analytics and reports
+* Payment gateway integration
+* Email notifications for complaints
+* Mobile responsive improvements
+* Advanced analytics dashboard
